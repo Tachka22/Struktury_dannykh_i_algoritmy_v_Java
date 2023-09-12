@@ -7,5 +7,10 @@ public class highArray {
         elements = 0;
     }
 
+    public void Insert(long value){
+        arr[elements] = value;
+        elements++;
+    }
+
 
 }
