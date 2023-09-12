@@ -12,5 +12,16 @@ public class highArray {
         elements++;
     }
 
+    public boolean Find(long value){
+        int i;
+        for (i = 0; i <elements; i++)
+            if (arr[i] == value)
+                break;
+        if (i == elements)
+            return false;
+        else
+            return true;
+    }
+
 
 }
