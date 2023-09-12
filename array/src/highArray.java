@@ -22,6 +22,27 @@ public class highArray {
         else
             return true;
     }
+    public boolean Delete(long value){
+        int i;
+        for (i = 0; i <elements; i++)
+            if (arr[i] == value)
+                break;
+        if (i == elements)
+            return false;
+        else
+            for (int j = i; j < elements; j++)
+                arr[j] = arr[j+1];
+            elements--;
+            return true;
+    }
+    public void Print()
+    {
+        for (int i = 0; i < elements; i++)
+        {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
 
 
 }
