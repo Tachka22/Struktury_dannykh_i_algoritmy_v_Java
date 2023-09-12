@@ -31,4 +31,21 @@ public class ordArray {
         }
         System.out.println();
     }
+
+    public boolean binarySearch(long value)
+    {
+        int firstIndex = 0;
+        int lastIndex = arr.length - 1;
+        while (firstIndex < lastIndex)
+        {
+            int middleIndex = (firstIndex + lastIndex) / 2;
+            if(arr[middleIndex] == value)
+                return true;
+            else if (arr[middleIndex] < value)
+                firstIndex = middleIndex + 1;
+            else if (arr[middleIndex] > value)
+                lastIndex = middleIndex -1;
+        }
+        return false;
+    }
 }
