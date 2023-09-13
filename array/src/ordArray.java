@@ -3,8 +3,8 @@ public class ordArray {
     private int elements;
 
     public ordArray(int max) {
-        this.arr = arr;
-        this.elements = 0;
+        arr = new long[max];
+        elements = 0;
     }
 
     public int Size(){
@@ -32,7 +32,7 @@ public class ordArray {
         System.out.println();
     }
 
-    public boolean binarySearch(long value)
+    public int binarySearch(long value)
     {
         int firstIndex = 0;
         int lastIndex = arr.length - 1;
@@ -40,12 +40,24 @@ public class ordArray {
         {
             int middleIndex = (firstIndex + lastIndex) / 2;
             if(arr[middleIndex] == value)
-                return true;
+                return middleIndex;
             else if (arr[middleIndex] < value)
                 firstIndex = middleIndex + 1;
             else if (arr[middleIndex] > value)
                 lastIndex = middleIndex -1;
         }
-        return false;
+        return -1;
+    }
+    //TODO:реализовать поиск и возвращение int и встроить в функцию удаления(мб сделать провереку на boolen а потом возвращать уже если true)
+
+    public boolean delete(long value){
+        int temp = binarySearch(value);
+        if (arr[temp] == elements)
+            return false;
+        else
+            for (int j = temp; temp <= elements; j++)
+                arr[j] = arr[j + 1];
+            elements--;
+            return true;
     }
 }
