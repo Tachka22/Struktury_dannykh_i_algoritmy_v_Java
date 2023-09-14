@@ -44,5 +44,16 @@ public class highArray {
         System.out.println();
     }
 
-
+    public void bubbleSort()
+    {
+        for (int i = 0; i < elements; i++){
+            for (int j = 1;j < elements - i; j++){
+                if (arr[j] < arr[j-1]){
+                    long temp = arr[j];
+                    arr[j] = arr[j - 1];
+                    arr[j - 1] = temp;
+                }
+            }
+        }
+    }
 }
