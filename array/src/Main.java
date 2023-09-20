@@ -4,8 +4,9 @@ import java.util.Random;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
+        //--------------------------------------------------------------------------
         System.out.println("Array:");
-        int size = 100;
+        int size = 9;
         highArray highArray = new highArray(size);
         highArray.Insert(99);
         highArray.Insert(44);
@@ -18,23 +19,17 @@ public class Main {
         highArray.Insert(33);
         highArray.Print();
 
-        if (highArray.Find(11)) System.out.println("Successfully");
-        else System.out.println("Can`t find");
+        //if (highArray.Find(11)) System.out.println("Successfully");
+        //else System.out.println("Can`t find");
+        //highArray.Delete(11);
 
-        highArray.Delete(11);
+        //highArray.Print();
+        //highArray.bubbleSort();
+        //highArray.selectSort();
+        highArray.insertSort();
         highArray.Print();
 
-        System.out.println("Order Array:");
+        //--------------------------------------------------------------------------
 
-        int osize = 10;
-        ordArray ordArray = new ordArray(osize);
-        for (int i = 0; i < 10; i++) {
-            ordArray.insert(i);
-        }
-        ordArray.Print();
-        System.out.println("binarySearch: " + ordArray.binarySearch(2));
-//        if (ordArray.delete(2)) System.out.println("deleted");
-//        else System.out.println("Can`t delete");
-        ordArray.Print();
     }
 }
