@@ -67,7 +67,6 @@ public class DoublyLinkedList<T> {
         head = head.next;
         head.prev = null;
         temp.next = null;
-
         size--;
     }
     /**
@@ -102,5 +101,22 @@ public class DoublyLinkedList<T> {
         return size == 0;
     }
 
+    public T deleteFirst(){
+        if (head == null) return null;
 
+        if (head == tail){
+            head = null;
+            tail = null;
+            return null;
+        }
+
+        Node<T> temp = head;
+        head = head.next;
+        head.prev = null;
+        temp.next = null;
+
+        size--;
+
+        return temp.data;
+    }
 }
