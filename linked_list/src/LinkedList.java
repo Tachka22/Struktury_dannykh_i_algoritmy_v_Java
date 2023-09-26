@@ -69,4 +69,30 @@ public class LinkedList<T> {
         }
         System.out.println();
     }
+    public void prepend(T data){
+        Node<T> newNode = new Node<>(data);
+        if (head == null) head = newNode;
+        else {
+            newNode.next = head;
+            head = newNode;
+        }
+
+    }
+    public boolean search(T value){
+        Node<T> currentNode = head;
+        while (currentNode != null){
+            if (currentNode.data == value){
+                return true;
+            }
+            currentNode = currentNode.next;
+        }
+        return false;
+    }
+    public T remove(){
+        if (head == null) return null;
+        var value = head.data;
+        head = head.next;
+        return value;
+    }
+
 }
