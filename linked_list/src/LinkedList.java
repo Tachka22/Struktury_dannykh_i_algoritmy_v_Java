@@ -1,4 +1,5 @@
 public class LinkedList<T> {
+
     private static class Node<T>{
         public T getData() {
             return data;
@@ -88,11 +89,14 @@ public class LinkedList<T> {
         }
         return false;
     }
-    public T remove(){
+    public T deleteFirst(){
         if (head == null) return null;
-        var value = head.data;
+        Node<T> temp = head;
         head = head.next;
-        return value;
+        return head.data;
+    }
+    public boolean isEmpty(){
+        return head == null;
     }
 
 }
