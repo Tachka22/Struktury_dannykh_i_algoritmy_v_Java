@@ -1,7 +1,7 @@
 public class LinkStack<T>{
     private LinkedList theList;
     public LinkStack(){
-        theList = new LinkedList<>();
+        theList = new LinkedList<T>();
     }
     public void push(T value){
         theList.prepend(value);
