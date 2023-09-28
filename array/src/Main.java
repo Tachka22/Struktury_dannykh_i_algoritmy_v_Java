@@ -32,4 +32,19 @@ public class Main {
         //--------------------------------------------------------------------------
 
     }
+    /**
+     * /Слиянение двух массивов
+     */
+    public static void mergeArray(int[] arrayA, int sizeA, int[] arrayB, int sizeB, int[] arrayC){
+        int aDex = 0, bDex = 0, cDex = 0;
+        while(aDex < sizeA && bDex < sizeB) //пока ни один из массивов не пуст
+            if (arrayA[aDex] < arrayB[bDex])
+                arrayC[cDex++] = arrayA[aDex++];
+            else
+                arrayC[cDex++] = arrayB[bDex];
+        while (aDex < sizeA)
+            arrayC[cDex++] = arrayA[aDex++];
+        while (bDex < sizeB)
+            arrayC[cDex++] = arrayB[bDex++];
+    }
 }
